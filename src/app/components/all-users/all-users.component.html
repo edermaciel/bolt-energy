@@ -1,0 +1,35 @@
+<div class="btn__actions">
+    <button (click)="refreshTable()" class="mr-bs" mat-mini-fab color="primary"
+        aria-label="Esse é o botão de adicionar um novo usuário">
+        <mat-icon>refresh</mat-icon>
+    </button>
+    <button (click)="openDialog('add')" class="mr-bs" mat-mini-fab color="primary"
+        aria-label="Esse é o botão de adicionar um novo usuário">
+        <mat-icon>add</mat-icon>
+    </button>
+    <button [ngStyle]="{display:(isUpdateAction) ? '' : 'none'}" (click)="openDialog('update')" class="mr-bs"
+        mat-mini-fab color="accent" aria-label="Esse é o botão de atualizar um usuário">
+        <mat-icon>edit</mat-icon>
+    </button>
+    <button [disabled]="!tableData.length" (click)="removeUser()" class="btn__remove" mat-mini-fab color="warn"
+        aria-label="Esse é o botão de remove um usuário">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>
+
+<div class="table-container">
+    <table style="width: 100%;" aria-describedby="Essa é a tabela contendo todos os usuários" mat-table
+        [dataSource]="tableData">
+        <!-- Define the columns dynamically -->
+        <ng-container *ngFor="let column of tableColumns" [matColumnDef]="column">
+            <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+            <td mat-cell *matCellDef="let user" (click)="selectRow(user, $event)">{{ user[column] }}</td>
+        </ng-container>
+
+        <!-- Create table header row -->
+        <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+
+        <!-- Create table rows dynamically -->
+        <tr mat-row *matRowDef="let user; columns: tableColumns;"></tr>
+    </table>
+</div>

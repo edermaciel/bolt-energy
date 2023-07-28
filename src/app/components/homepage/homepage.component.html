@@ -1,0 +1,29 @@
+<p class="mb-0">
+    <mat-toolbar color="primary">
+        <button style="color: white;" mat-icon-button class="btn__hamburguer" [matMenuTriggerFor]="menu"
+            aria-label="Menu hamburguer">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>list</mat-icon>
+                <a class="anchor__item" [routerLink]="'/users'">Ver Todos</a>
+            </button>
+            <button (click)="openDialog('add')" mat-menu-item>
+                <mat-icon>library_add</mat-icon>
+                <span class="anchor__item">Cadastrar</span>
+            </button>
+        </mat-menu>
+        <span class="spacer"></span>
+        <img src="assets/images/bolt-logo.png" width="80px" height="56px" alt="Bolt Energy Logo">
+    </mat-toolbar>
+</p>
+
+<p>
+    <mat-toolbar class="toolbar__current-area" color="primary">
+        <span>{{ currentArea }}</span>
+    </mat-toolbar>
+</p>
+
+
+<bolt-all-users></bolt-all-users>
