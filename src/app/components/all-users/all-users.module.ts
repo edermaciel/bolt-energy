@@ -8,9 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CpfFormatPipe } from 'src/app/pipes';
 
 @NgModule({
-  declarations: [AllUsersComponent],
+  declarations: [AllUsersComponent, CpfFormatPipe],
   imports: [
     MatInputModule,
     MatFormFieldModule,
@@ -20,6 +21,6 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatDialogModule,
   ],
-  exports: [AllUsersComponent]
+  exports: [AllUsersComponent],
 })
 export class AllUsersModule { }
