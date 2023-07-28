@@ -1,23 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { DialogService } from 'src/app/services';
+import { DialogData } from 'src/app/shared';
 import { HomepageComponent } from './homepage.component';
 
-// describe('HomepageComponent', () => {
-//   let component: HomepageComponent;
-//   let fixture: ComponentFixture<HomepageComponent>;
 
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [ HomepageComponent ]
-//     })
-//     .compileComponents();
+describe('HomepageComponent', () => {
+    let component: HomepageComponent;
+    let dialogService: DialogService;
 
-//     fixture = TestBed.createComponent(HomepageComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+    beforeEach(() => {
+        dialogService = jasmine.createSpyObj('DialogService', ['openDialog']);
+        component = new HomepageComponent(dialogService);
+    });
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+
+    it('should open dialog', () => {
+        const action = 'add';
+        const data: DialogData = { action, userData: null };
+        component.openDialog(action);
+
+        expect(dialogService.openDialog).toHaveBeenCalledWith(data);
+    });
+});

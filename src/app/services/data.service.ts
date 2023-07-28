@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map, BehaviorSubject } from 'rxjs';
+import { Observable, map, BehaviorSubject, catchError } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { State, User } from '../shared';
 import { HttpClient } from '@angular/common/http';
@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root'
 })
 export class DataService {
-    private updateData = new BehaviorSubject(false); //closeRightBar
+    private updateData: BehaviorSubject<boolean> = new BehaviorSubject(false);
     tableUpdated = this.updateData.asObservable();
 
     usersCollection: AngularFirestoreCollection<User>;

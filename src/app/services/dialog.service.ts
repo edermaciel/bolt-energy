@@ -12,7 +12,7 @@ export class DialogService {
 
     openDialog(data: DialogData): void {
         this.dialog.open(DialogComponent, {
-            width: '100%', // Set the width of the dialog as per your requirement
+            width: '100%',
             data
         });
     }

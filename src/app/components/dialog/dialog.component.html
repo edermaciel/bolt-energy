@@ -18,7 +18,7 @@
 
                 <div class="form-group" style="margin-left:20px">
                     <label for="estado">Estado: <span class="required">*</span></label>
-                    <select #stateSelect id="estado" name="estado" required>
+                    <select #stateSelect id="estadoSelect" name="estadoSelect" required>
                         <option value="">Selecione</option>
                         <ng-container *ngFor="let state of statesList">
                             <option [value]="state.sigla" [selected]="selectedState === state.sigla">

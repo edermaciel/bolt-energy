@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DialogService } from 'src/app/services';
 import { DialogData } from 'src/app/shared';
 
@@ -7,13 +7,10 @@ import { DialogData } from 'src/app/shared';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.less']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent {
   currentArea: string = 'Usuários Cadastrados';
 
   constructor(private dialogService: DialogService) { }
-
-  ngOnInit(): void {
-  }
 
   openDialog(action: string) {
     const data: DialogData = {

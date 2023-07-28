@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
-import { Subscription, switchMap, take } from 'rxjs';
+import { Subscription, take } from 'rxjs';
 import { DataService, DialogService } from 'src/app/services';
 
 import { DialogData, User } from 'src/app/shared';
