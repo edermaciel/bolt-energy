@@ -9,9 +9,9 @@
                 <mat-icon>list</mat-icon>
                 <a class="anchor__item" [routerLink]="'/users'">Ver Todos</a>
             </button>
-            <button mat-menu-item>
+            <button (click)="openDialog('add')" mat-menu-item>
                 <mat-icon>library_add</mat-icon>
-                <a class="anchor__item" [routerLink]="'/cadastrar'">Cadastrar</a>
+                <span class="anchor__item">Cadastrar</span>
             </button>
         </mat-menu>
         <span class="spacer"></span>
