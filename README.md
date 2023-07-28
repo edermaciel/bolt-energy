@@ -8,9 +8,6 @@
 	- Estilização simples utilizando Angular Material na versão 13.0.0
 	- Ajustes de css para deixar o layout responsivo 
 
-# Acesse o projeto
-	link do projeto: 
-
 # Como buildar local o projeto local:
 	1 - acesse este link e baixe o arquivo environment:`https://drive.google.com/drive/folders/1bpud4sRoYDru_nmq1cr7xqcIaiz3SaA4?usp=drive_link`
 	2 - clone o repositório na sua máquina
