@@ -23,7 +23,15 @@
         <!-- Define the columns dynamically -->
         <ng-container *ngFor="let column of tableColumns" [matColumnDef]="column">
             <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
-            <td mat-cell *matCellDef="let user" (click)="selectRow(user, $event)">{{ user[column] }}</td>
+            <td mat-cell *matCellDef="let user" (click)="selectRow(user, $event)">
+                <ng-container *ngIf="column === 'cpf'; else notCPF">
+                    {{ user[column] | cpfFormat }}
+                </ng-container>
+                <ng-template #notCPF>
+                    {{ user[column] }}
+                </ng-template>
+
+            </td>
         </ng-container>
 
         <!-- Create table header row -->
