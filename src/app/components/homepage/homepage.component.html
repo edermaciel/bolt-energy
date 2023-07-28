@@ -1,8 +1,19 @@
 <p class="mb-0">
     <mat-toolbar color="primary">
-        <button mat-icon-button class="btn__hamburguer" aria-label="Example icon-button with menu icon">
-            <mat-icon class="menu__icon">menu</mat-icon>
+        <button style="color: white;" mat-icon-button class="btn__hamburguer" [matMenuTriggerFor]="menu"
+            aria-label="Menu hamburguer">
+            <mat-icon>menu</mat-icon>
         </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>list</mat-icon>
+                <a class="anchor__item" [routerLink]="'/users'">Ver Todos</a>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>library_add</mat-icon>
+                <a class="anchor__item" [routerLink]="'/cadastrar'">Cadastrar</a>
+            </button>
+        </mat-menu>
         <span class="spacer"></span>
         <img src="assets/images/bolt-logo.png" width="80px" height="56px" alt="Bolt Energy Logo">
     </mat-toolbar>

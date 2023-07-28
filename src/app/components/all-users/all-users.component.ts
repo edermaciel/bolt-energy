@@ -3,7 +3,7 @@ import { MatTable } from '@angular/material/table';
 import { Subscription, switchMap, take } from 'rxjs';
 import { DataService, DialogService } from 'src/app/services';
 
-import { User } from 'src/app/shared';
+import { DialogData, User } from 'src/app/shared';
 
 @Component({
   selector: 'bolt-all-users',
@@ -73,7 +73,7 @@ export class AllUsersComponent implements OnInit, OnDestroy {
   }
 
   openDialog(action: string) {
-    const data = {
+    const data: DialogData = {
       action,
       userData: this.selectedUser ?? null
     }

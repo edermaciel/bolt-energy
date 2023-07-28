@@ -21,7 +21,9 @@
                     <select #stateSelect id="estado" name="estado" required>
                         <option value="">Selecione</option>
                         <ng-container *ngFor="let state of statesList">
-                            <option [value]="state.sigla">{{ state.sigla }}</option>
+                            <option [value]="state.sigla" [selected]="selectedState === state.sigla">
+                                {{ state.sigla }}
+                            </option>
                         </ng-container>
                     </select>
                 </div>
@@ -30,9 +32,9 @@
                     <label for="sexo">Sexo: <span class="required">*</span></label>
                     <select #sexSelect id="sexo" name="sexo" required>
                         <option value="">Selecione</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
+                        <ng-container *ngFor="let sex of sexList">
+                            <option [value]="sex" [selected]="selectedSex === sex">{{ sex | titlecase}}</option>
+                        </ng-container>
                     </select>
                 </div>
             </div>

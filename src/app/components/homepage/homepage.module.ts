@@ -5,7 +5,8 @@ import { HomepageComponent } from './homepage.component';
 import { AllUsersModule } from '../all-users';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 @NgModule({
     declarations: [
         HomepageComponent
@@ -14,7 +15,9 @@ import { MatIconModule } from '@angular/material/icon';
         CommonModule,
         AllUsersModule,
         MatToolbarModule,
-        MatIconModule
+        MatIconModule,
+        MatMenuModule,
+        RouterModule
     ],
 })
 export class HomepageModule { }
